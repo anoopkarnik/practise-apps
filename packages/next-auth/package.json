@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "exports":{
+  "exports": {
     "./auth": "./index.ts"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "next-auth": "^4.24.7"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "prisma": "^5.11.0"
   }
 }

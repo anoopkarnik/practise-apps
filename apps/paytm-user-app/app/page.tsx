@@ -1,9 +1,14 @@
-import Image from "next/image";
-import {useBalance} from '@repo/recoil-store/useBalance'
+'use client'
+
+import { Appbar } from "@repo/ui/paytm-app/Appbar";
+import { signIn, signOut, useSession} from "next-auth/react";
+
 export default function Home() {
-  
-  const balance = useBalance()
+  const session = useSession()
+
   return (
-    <div className='text-white'>Current {balance}</div>
+    <div>
+      <Appbar title='Paytm User Clone' onSignin={signIn} onSignout={signOut} user={session.data?.user} />
+   </div>
   );
 }

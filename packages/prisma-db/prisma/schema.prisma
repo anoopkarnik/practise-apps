@@ -48,7 +48,8 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
   image         String?
-  role          String?
+  role          String? // admin, user, guest
+  type          String?  @default("consumer") // consumer, merchant
   password      String?
   accounts      Account[]
   sessions      Session[]

@@ -1,14 +1,24 @@
-'use client'
+import React from 'react'
+import { AppbarClient } from '../components/AppbarClient'
+import { getNextAuthConfig } from '@repo/next-auth/auth';
+import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
 
-import { Appbar } from "@repo/ui/paytm-app/Appbar";
-import { signIn, signOut, useSession} from "next-auth/react";
 
-export default function Home() {
-  const session = useSession()
+async function page() {
+  const NEXT_AUTH_CONFIG = getNextAuthConfig({
+    GoogleProviderPresent: process.env.GOOGLE_PROVIDER_PRESENT || "false",
+    GitHubProviderPresent: process.env.GITHUB_PROVIDER_PRESENT || "false",
+    CredentialsProviderPresent: process.env.CREDENTIALS_PROVIDER_PRESENT || "false",
+});
 
-  return (
-    <div>
-      <Appbar title='Paytm User Clone' onSignin={signIn} onSignout={signOut} user={session.data?.user} />
-   </div>
-  );
+  const session = await getServerSession(NEXT_AUTH_CONFIG as any)
+  if (session?.user){
+    redirect('/dashboard')
+  }
+  else{
+    redirect('/api/auth/signin')
+  }
 }
+
+export default page

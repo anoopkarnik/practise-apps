@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "prisma":{
+    "seed": "ts-node prisma/seed.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -13,9 +16,10 @@
     "prisma": "^5.12.1"
   },
   "dependencies": {
-    "@prisma/client": "^5.12.1"
+    "@prisma/client": "^5.12.1",
+    "prisma-multischema": "^1.1.4"
   },
-  "exports":{
-    "./client":"./index.ts"
+  "exports": {
+    "./client": "./index.ts"
   }
 }

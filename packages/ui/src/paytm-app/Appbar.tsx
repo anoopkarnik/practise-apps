@@ -1,8 +1,10 @@
+import { Avatar, AvatarFallback, AvatarImage } from "../shadcn/ui/avatar";
 import { Button } from "../shadcn/ui/button";
 
 interface AppbarProps {
     user?: {
         name?: string | null;
+        image?: string | null;
     },
     title?: string,
     onSignin: any,
@@ -19,7 +21,11 @@ export const Appbar = ({
         <div className="text-lg flex flex-col justify-center">
             {title}
         </div>
-        <div className="flex flex-col justify-center pt-2">
+        <div className="flex gap-4 justify-center items-center">
+            <Avatar>
+                <AvatarImage src={user?.image }/>
+                <AvatarFallback>{user?.name?.charAt(0)}</AvatarFallback>
+            </Avatar>
             <Button onClick={user ? onSignout : onSignin}>{user ? "Logout" : "Login"}</Button>
         </div>
     </div>

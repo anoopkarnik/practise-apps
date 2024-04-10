@@ -1,34 +1,27 @@
-import express from 'express';
+const express = require('express');
 import db from "@repo/prisma-db/client"
 
 const app = express();
+app.use(express.json());
 
 app.post('/hdfcWebhook', async (req, res) => {
-    const paymentInformation:{
-        token: string,
-        userId: string,
-        amount: string
-    
-    } = {
-        token: req.body.token,
-        userId: req.body.userId,
-        amount: req.body.amount
-    };
+
+    const { token, userId, amount } = req.body;
     try{
         await db.$transaction([
             db.balance.updateMany({
                 where:{
-                    userId: paymentInformation.userId
+                    userId: userId
                 },
                 data:{
                     amount:{
-                        increment: Number(paymentInformation.amount)
+                        increment: Number(amount)
                     }
                 }
             }),
             db.onRampTransaction.updateMany({
                 where:{
-                    token: paymentInformation.token
+                    token: token
                 },
                 data:{
                     status: "Success"
@@ -46,5 +39,7 @@ app.post('/hdfcWebhook', async (req, res) => {
     }
 });
 
-app.listen(3010)
+app.listen(3010, () => {
+    console.log('Server is running on port 3010');
+})
 

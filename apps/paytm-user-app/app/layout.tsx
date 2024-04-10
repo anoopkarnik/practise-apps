@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Providers>
-        <body className="dark"  >
+        <body className="light"  >
           {children}
         </body>
         </Providers>

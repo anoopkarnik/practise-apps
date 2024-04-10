@@ -19,6 +19,14 @@ export const OnRampTransactionCard = ({transactions}:{transactions:{time:Date,am
         <CardTitle>Transactions</CardTitle>
         <CardContent className="p-4 flex flex-col gap-4 w-full">
             <Table>
+                <TableHeader>
+                    <TableRow>
+                    <TableHead >Date</TableHead>
+                    <TableHead>Amount</TableHead>
+                    <TableHead>Status</TableHead>
+                    <TableHead >Provider</TableHead>
+                    </TableRow>
+                </TableHeader>
                 <TableBody>
                     {transactions.map((t)=>(
                         <TableRow key={t.time.toDateString()}>

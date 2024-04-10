@@ -1,15 +1,8 @@
 import { NextResponse } from "next/server"
 import { getServerSession } from "next-auth"
-import { getNextAuthConfig } from "@repo/next-auth/auth"
+import { NEXT_AUTH_CONFIG } from "../../lib/auth"
 
 export const GET = async () => {
-
-    const NEXT_AUTH_CONFIG = await getNextAuthConfig({
-        GoogleProviderPresent: process.env.GOOGLE_PROVIDER_PRESENT || "false",
-        GitHubProviderPresent: process.env.GITHUB_PROVIDER_PRESENT || "false",
-        CredentialsProviderPresent: process.env.CREDENTIALS_PROVIDER_PRESENT || "false",
-
-    });
 
     const session = await getServerSession(NEXT_AUTH_CONFIG as any)
     if (session && session.user){

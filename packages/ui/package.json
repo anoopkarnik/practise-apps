@@ -41,6 +41,7 @@
     "@tanstack/react-table": "^8.15.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "lucide-react": "^0.368.0",
     "react-hook-form": "^7.51.2",
     "tailwind-merge": "^2.2.2",
     "zod": "^3.22.4"

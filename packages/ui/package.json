@@ -9,7 +9,7 @@
     "./card": "./src/card.tsx",
     "./code": "./src/code.tsx",
     "./globals.css": "./globals.css",
-    "./utils": "./src/utils.ts"
+    "./utils": "./lib/utils.ts"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -39,7 +39,10 @@
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@tanstack/react-table": "^8.15.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
     "react-hook-form": "^7.51.2",
+    "tailwind-merge": "^2.2.2",
     "zod": "^3.22.4"
   }
 }

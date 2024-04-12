@@ -1,5 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from "../shadcn/ui/avatar";
-import { Button } from "../shadcn/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@repo/ui/components/avatar";
+import { Button } from "@repo/ui/components/button";
 
 interface AppbarProps {
     user?: {

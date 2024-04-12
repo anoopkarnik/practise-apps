@@ -1,7 +1,7 @@
 {
   "name": "paytm-bank-webhook",
   "version": "1.0.0",
-  "description": "",
+  "description": "whats going on",
   "main": "index.js",
   "scripts": {
     "build": "npx esbuild ./src/index.ts --bundle --platform=node --outfile=dist/index.js",

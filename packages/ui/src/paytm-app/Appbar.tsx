@@ -3,8 +3,8 @@ import { Button } from "../shadcn/ui/button";
 
 interface AppbarProps {
     user?: {
-        name?: string | null;
-        image?: string | null;
+        name?: any;
+        image?: any;
     },
     title?: string,
     onSignin: any,

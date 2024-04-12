@@ -13,7 +13,7 @@ const NEXT_AUTH_CONFIG = getNextAuthConfig({
 
 async function getBalance() {
  
-    const session = await getServerSession(NEXT_AUTH_CONFIG as any)
+    const session:any = await getServerSession(NEXT_AUTH_CONFIG as any)
     const balance = await prisma.balance.findFirst({
         where: {
             userId: session?.user?.id
@@ -26,7 +26,7 @@ async function getBalance() {
 }
 
 async function getOnRampTransactions() {
-    const session = await getServerSession(NEXT_AUTH_CONFIG as any);
+    const session:any = await getServerSession(NEXT_AUTH_CONFIG as any);
     const txns = await prisma.onRampTransaction.findMany({
         where: {
             userId: session?.user?.id

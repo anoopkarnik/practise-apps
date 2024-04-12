@@ -4,7 +4,7 @@ import { NEXT_AUTH_CONFIG } from "../../lib/auth"
 
 export const GET = async () => {
 
-    const session = await getServerSession(NEXT_AUTH_CONFIG as any)
+    const session:any = await getServerSession(NEXT_AUTH_CONFIG as any)
     if (session && session.user){
         return NextResponse.json({
             user: session.user

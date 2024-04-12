@@ -2,6 +2,8 @@ import { NextResponse } from "next/server"
 import { getServerSession } from "next-auth"
 import { getNextAuthConfig } from "@repo/next-auth/auth"
 
+
+
 export const GET = async () => {
 
     const NEXT_AUTH_CONFIG = getNextAuthConfig({
@@ -11,7 +13,7 @@ export const GET = async () => {
 
     });
 
-    const session = await getServerSession(NEXT_AUTH_CONFIG as any)
+    const session:any = await getServerSession(NEXT_AUTH_CONFIG as any)
     if (session && session.user){
         return NextResponse.json({
             user: session.user

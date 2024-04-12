@@ -2,7 +2,6 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    '../../packages/ui/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',

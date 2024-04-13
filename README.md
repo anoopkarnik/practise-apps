@@ -1,14 +1,8 @@
-# Turborepo starter
+Clone this repo
 
-This is an official starter Turborepo.
+In all packages .env files mentioned below add environment variables
 
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
+git run dev  to run it locally
 
 ## What's inside?
 
@@ -16,9 +10,13 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
+- `paytm-bank-webhook`: An [Express] [Node.js] app which receives request from banks to update database
+- `paytm-merchant-app`: A [Next.js] app currently just having next auth google signup/signin page
+- `paytm-user-app`: A [Next.js] app clone with credentials signup/signin and ability to transfer money to another user and to paytm itself
+- `@repo/shadcn-ui`: a typscript react component package with shadcn components with purple theme
+- `@repo/next-auth`: a [Node.js] package with next auth authentication
+- `@repo/prisma-db`: a [Node.js] package which allows prisma db connection.
+- `@repo/recoil-store`: a [Node.js] package which lets us define recoil atoms and hooks.
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
@@ -37,8 +35,8 @@ This Turborepo has some additional tools already setup for you:
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
-pnpm build
+cd turborepo-boilerplate-code
+npm run build
 ```
 
 ### Develop
@@ -46,8 +44,8 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
-pnpm dev
+cd turborepo-boilerplate-code
+npm run dev
 ```
 
 ### Remote Caching

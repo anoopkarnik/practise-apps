@@ -1,6 +1,6 @@
 import { TransferMoneyCard } from "../../../components/TransferMoneyCard";
 
-export default async function(){
+export default async function P2P(){
 
     return (
         <div className="w-screen flex flex-col gap-4 p-4">

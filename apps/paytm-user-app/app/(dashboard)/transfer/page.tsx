@@ -40,7 +40,7 @@ async function getOnRampTransactions() {
     }))
 }
 
-export default async function(){
+export default async function Transfer(){
     const balance = await getBalance();
     const onRampTransactions = await getOnRampTransactions();
     return (

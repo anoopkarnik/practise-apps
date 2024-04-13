@@ -5,8 +5,7 @@ import { Appbar } from "@repo/ui/paytm-app/Appbar";
 import { signIn, signOut, useSession} from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-
-export default function() {
+function MerchantApp() {
   const balance = useBalance();
   const session = useSession()
   const router = useRouter();
@@ -18,4 +17,7 @@ export default function() {
       }} user={session.data?.user} />
        hi there {balance}
   </div>
-)}
+  )
+}
+
+export default MerchantApp;

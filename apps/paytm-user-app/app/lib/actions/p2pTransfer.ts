@@ -5,7 +5,7 @@ import { NEXT_AUTH_CONFIG } from "../auth"
 import prisma from "@repo/prisma-db/client";
 
 export async function p2pTransfer(to:string,amount:number){
-    const session = await getServerSession(NEXT_AUTH_CONFIG as any);
+    const session:any = await getServerSession(NEXT_AUTH_CONFIG as any);
     const from = session?.user?.id;
     if (!from){
         return {

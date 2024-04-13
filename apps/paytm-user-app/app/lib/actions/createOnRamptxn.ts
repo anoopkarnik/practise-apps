@@ -5,7 +5,7 @@ import { start } from "repl";
 import prisma from "@repo/prisma-db/client"
 
 export async function createOnRamptxn(amount:number, provider:string){
-    const session = await getServerSession(NEXT_AUTH_CONFIG as any);
+    const session:any = await getServerSession(NEXT_AUTH_CONFIG as any);
     const userId = session?.user?.id;
     if (!userId){
         return {

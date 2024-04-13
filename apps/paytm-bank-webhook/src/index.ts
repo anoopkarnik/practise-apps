@@ -4,7 +4,7 @@ import db from "@repo/prisma-db/client"
 const app = express();
 app.use(express.json());
 
-app.post('/hdfcWebhook', async (req, res) => {
+app.post('/hdfcWebhook', async (req:any, res:any) => {
 
     const { token, userId, amount } = req.body;
     try{

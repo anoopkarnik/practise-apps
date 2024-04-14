@@ -27,4 +27,16 @@ jobs:
         tags: anoopkarnik/turborepo-boilerplate-paytm-user-app:latest
 
     - name: Verify Pushed Image
-      run: docker pull  anoopkarnik/turborepo-boilerplate-paytm-user-app:latest  # Replace with your Docker Hub username and repository
+      run: docker pull anoopkarnik/turborepo-boilerplate-paytm-user-app:latest  # Replace with your Docker Hub username and repository
+    
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          sudo docker pull anoopkarnik/turborepo-boilerplate-paytm-user-app:latest
+          sudo docker stop paytm-user-app || true
+          sudo docker rm paytm-user-app || true
+          sudo docker run -d --name paytm-user-app -p 3005:3000 anoopkarnik/turborepo-boilerplate-paytm-user-app:latest

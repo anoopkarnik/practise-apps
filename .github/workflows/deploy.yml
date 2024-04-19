@@ -38,7 +38,8 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          sudo docker pull anoopkarnik/turborepo-boilerplate-paytm-user-app:latest
           sudo docker stop paytm-user-app || true
           sudo docker rm paytm-user-app || true
+          sudo docker rmi anoopkarnik/turborepo-boilerplate-paytm-user-app:latest || true
+          sudo docker pull anoopkarnik/turborepo-boilerplate-paytm-user-app:latest
           sudo docker run --env-file ./env-files/.env --restart always -d --name paytm-user-app -p 3001:3001 anoopkarnik/turborepo-boilerplate-paytm-user-app:latest

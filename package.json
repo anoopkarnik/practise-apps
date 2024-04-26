@@ -7,7 +7,9 @@
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "db:generate": "cd packages/prisma-db && npx prisma generate && cd ../..",
-    "start-paytm-user-app": "cd ./apps/paytm-user-app && npm run start"
+    "start-paytm-user-app": "cd ./apps/paytm-user-app && npm run start",
+    "start-paytm-merchant-app": "cd ./apps/paytm-merchant-app && npm run start",
+    "start-app-dashboard": "cd ./apps/app-dashboard && npm run start"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

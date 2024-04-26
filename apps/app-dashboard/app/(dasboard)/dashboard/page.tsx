@@ -6,13 +6,13 @@ export default function Dashboard() {
         {
             'title': "Paytm User App",
             'description': "A Financial app with next-auth authentication with add wallet money and transfering money functionalities",
-            'link': 'http://localhost:3001',
+            'link': process.env.PAYTM_USERAPP_URL || 'http://localhost:3001',
             'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/paytmuserclone.gif'
         },
         {
             'title': "Paytm Merchant App",
             'description': "A Financial app with next-auth authentication for google and github provider",
-            'link': 'http://localhost:3002',
+            'link': process.env.PAYTM_MERCHANTAPP_URL || 'http://localhost:3002',
             'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/paytmmerchantclone.gif'
         }
     ]

@@ -3,7 +3,7 @@ version: '3.8'
 services:
   paytmuser-app:
     build:
-      context: ./docker
+      context: .
       dockerfile: Dockerfile.paytmUserApp
     image: anoopkarnik/turborepo-boilerplate-paytm-user-app:latest
     ports:
@@ -12,7 +12,7 @@ services:
       - turborepo-network
   paytmmerchant-app:
     build:
-      context: ./docker
+      context: .
       dockerfile: Dockerfile.paytmMerchantApp
     image: anoopkarnik/turborepo-boilerplate-paytm-merchant-app:latest
     ports:
@@ -21,7 +21,7 @@ services:
       - turborepo-network
   app-dahsboard:
     build:
-      context: ./docker
+      context: .
       dockerfile: Dockerfile.appDashboard
     image: anoopkarnik/turborepo-boilerplate-app-dahsboard:latest
     ports:

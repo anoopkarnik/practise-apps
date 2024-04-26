@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json turbo.json tsconfig.json ./
 
-COPY apps ./apps
+COPY apps/app-dashboard ./apps/app-dashboard
 COPY packages ./packages
 
 RUN npm install

@@ -20,8 +20,8 @@ jobs:
 
     - name: Build and Push Docker image
       run: |
-        cd docker && docker-compose build
-        cd docker && docker-compose push
+        docker-compose build
+        docker-compose push
 
     - name: Sync Docker Compose file and restart services
       uses: appleboy/scp-action@master
@@ -29,7 +29,7 @@ jobs:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
-        source: ./docker/docker-compose.yml
+        source: ./docker-compose.yml
         target: /home/ubuntu/docker-compose.yml
 
 

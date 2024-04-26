@@ -19,16 +19,20 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and Push Docker image
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        file: ./docker/Dockerfile.paytmApp
-        push: true
-        tags: anoopkarnik/turborepo-boilerplate-paytm-user-app:latest
+      run: |
+        docker-compose build
+        docker-compose push
 
-    - name: Verify Pushed Image
-      run: docker pull anoopkarnik/turborepo-boilerplate-paytm-user-app:latest  # Replace with your Docker Hub username and repository
-    
+    - name: Sync Docker Compose file and restart services
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        source: docker-compose.yml
+        target: /home/ubuntu/docker-compose.yml
+
+
     - name: Deploy to EC2
       uses: appleboy/ssh-action@master
       env:
@@ -38,8 +42,6 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          sudo docker stop paytm-user-app || true
-          sudo docker rm paytm-user-app || true
-          sudo docker rmi anoopkarnik/turborepo-boilerplate-paytm-user-app:latest || true
-          sudo docker pull anoopkarnik/turborepo-boilerplate-paytm-user-app:latest
-          sudo docker run --env-file ./env-files/.env --restart always -d --name paytm-user-app -p 3001:3001 anoopkarnik/turborepo-boilerplate-paytm-user-app:latest
+          sudo docker-compose pull
+          sudo docker-compose down
+          sudo docker-compose up -d

@@ -19,7 +19,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Run ESLint
-      run: npx eslint ./ --ext .js,.jsx,.ts,.tsx
+      run: npx eslint ./ -c .js,.jsx,.ts,.tsx
 
     - name: Build and Push Docker image
       run: |

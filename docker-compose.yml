@@ -19,7 +19,7 @@ services:
       - "3002:3002"
     networks:
       - turborepo-network
-  app-dahsboard:
+  app-dashboard:
     build:
       context: .
       dockerfile: ./docker/Dockerfile.appDashboard

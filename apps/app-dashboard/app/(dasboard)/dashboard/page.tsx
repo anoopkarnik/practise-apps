@@ -6,13 +6,13 @@ async function page() {
         {
             'title': "Paytm User App",
             'description': "A Financial app with next-auth authentication with add wallet money and transfering money functionalities",
-            'link': process.env.PAYTM_USERAPP_URL,
+            'link': process.env.NEXT_PUBLIC_PAYTM_USERAPP_URL || "http://localhost:3001",
             'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/paytmuserclone.gif'
         },
         {
             'title': "Paytm Merchant App",
             'description': "A Financial app with next-auth authentication for google and github provider",
-            'link': process.env.PAYTM_MERCHANTAPP_URL,
+            'link': process.env.NEXT_PUBLIC_PAYTM_MERCHANTAPP_URL || "http://localhost:3002",
             'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/paytmmerchantclone.gif'
         }
     ]

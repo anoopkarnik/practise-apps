@@ -1,6 +1,6 @@
 import { AppCard } from "../../../components/AppCard"
 
-export default function Dashboard() {
+async function page() {
 
     const APPS = [
         {

@@ -23,7 +23,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/Dockerfile.appDashboard
-    image: anoopkarnik/turborepo-boilerplate-app-dahsboard:latest
+    image: anoopkarnik/turborepo-boilerplate-app-dashboard:latest
     ports:
       - "3000:3000"
     networks:

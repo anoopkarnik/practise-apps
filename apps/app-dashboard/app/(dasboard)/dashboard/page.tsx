@@ -18,7 +18,7 @@ async function page() {
     ]
     return <div className="grid grid-cols-1 md:grid-cols-3 ">
        {APPS.map((app) => (
-               <AppCard title={app.title} description={app.description} link={app.link} image={app.image}/>
+               <AppCard key={app.title} title={app.title} description={app.description} link={app.link} image={app.image}/>
        ))}
     </div>
 }

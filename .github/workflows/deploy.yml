@@ -32,6 +32,6 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          cd turborepo-apps && sudo docker-compose pull
-          cd turborepo-apps && sudo docker-compose down
-          cd turborepo-apps && sudo docker-compose up -d
+          cd /home/ubuntu/turborepo-apps && sudo docker-compose pull
+          cd /home/ubuntu/turborepo-apps && sudo docker-compose down
+          cd /home/ubuntu/turborepo-apps && sudo docker-compose up -d

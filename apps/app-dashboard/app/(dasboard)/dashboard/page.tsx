@@ -14,6 +14,12 @@ async function page() {
             'description': "A Financial app with next-auth authentication for google and github provider",
             'link': process.env.NEXT_PUBLIC_PAYTM_MERCHANTAPP_URL || "https://paytmmerchantapp.practise.bsamaritan.com",
             'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/paytmmerchantclone.gif'
+        },
+        {
+            'title': "Frontend Chat App",
+            'description': "A Frontend Express chat application with socket.io and basic authentication",
+            'link': process.env.NEXT_PUBLIC_PAYTM_CHATAPP_URL || "http://localhost:3005",
+            'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/paytmmerchantclone.gif'
         }
     ]
     return <div className="grid grid-cols-1 md:grid-cols-3 ">

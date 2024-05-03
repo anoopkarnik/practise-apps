@@ -28,6 +28,24 @@ services:
       - "3000:3000"
     networks:
       - turborepo-network
+  backend-chat-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.backendChatApp
+    image: anoopkarnik/turborepo-boilerplate-backend-chat-app:latest
+    ports:
+      - "3004:3004"
+    networks:
+      - turborepo-network
+  frontend-chat-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.frontendChatApp
+    image: anoopkarnik/turborepo-boilerplate-frontend-chat-app:latest
+    ports:
+      - "3005:3005"
+    networks:
+      - turborepo-network
 
 networks:
   turborepo-network:

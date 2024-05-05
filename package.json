@@ -8,7 +8,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "db:generate": "cd packages/prisma-db && npx prisma generate && cd ../..",
     "start-paytm-user-app": "cd ./apps/paytm-user-app && npm run start",
-    "start-paytm-merchant-app": "cd ./apps/paytm-merchant-app && npm run4 start",
+    "start-paytm-merchant-app": "cd ./apps/paytm-merchant-app && npm run start",
     "start-app-dashboard": "cd ./apps/app-dashboard && npm run start",
     "start-backend-chat-app": "cd ./apps/backend-chat-application && npm run start",
     "start-frontend-chat-app": "cd ./apps/frontend-chat-application && npm run start"

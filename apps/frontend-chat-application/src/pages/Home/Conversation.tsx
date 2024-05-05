@@ -1,10 +1,10 @@
 import React,{useContext} from 'react'
-import {SelectedUserContext} from '../../contexts/selectedUserContext'
-import {AuthContext} from '../../contexts/AuthContext'
+import {SelectedUserContext} from '../../contexts/selectedUserContext.jsx'
+import {AuthContext} from '../../contexts/AuthContext.jsx'
 
 const Conversation = ({conversation}:any) => {
-    const {selectedUser,setSelectedUser,conversations,setConversations}= useContext(SelectedUserContext) || {}
-    const {currentUser, setCurrentUser} = useContext(AuthContext) || {}
+    const {selectedUser}= useContext(SelectedUserContext) || {}
+    const {currentUser} = useContext(AuthContext) || {}
   return (
     <div key={conversation.senderId} className={`flex ${conversation.senderId === selectedUser._id ? 'justify-start':'justify-end'}`}>
         {conversation.senderId === selectedUser._id ?

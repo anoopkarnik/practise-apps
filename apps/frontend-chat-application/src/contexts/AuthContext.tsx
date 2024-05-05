@@ -1,4 +1,4 @@
-import {createContext, useState, useEffect} from 'react';
+import React,{createContext, useState} from 'react';
 
 interface AuthContextProps {
     currentUser: any,

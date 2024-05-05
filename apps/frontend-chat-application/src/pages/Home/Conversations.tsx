@@ -1,17 +1,13 @@
 import React,{useContext,useEffect,useRef,useState} from 'react'
-import { FaSearch } from "react-icons/fa";
 import { IoIosSend} from "react-icons/io";
-import { BiLogOut } from "react-icons/bi";
-import { SelectedUserContext } from '../../contexts/selectedUserContext';
-import { AuthContext } from '../../contexts/AuthContext';
-import {useSendMessage} from '../../hooks/useSendMessage';
-import Conversation from './Conversation';
-import useListenMessages from '../../hooks/useListenMessages';
+import { SelectedUserContext } from '../../contexts/selectedUserContext.jsx';
+import {useSendMessage} from '../../hooks/useSendMessage.jsx';
+import Conversation from './Conversation.jsx';
+import useListenMessages from '../../hooks/useListenMessages.jsx';
 
 const Conversations = () => {
 
-    const {selectedUser,setSelectedUser,conversations,setConversations}= useContext(SelectedUserContext) || {}
-    const {currentUser, setCurrentUser} = useContext(AuthContext) || {}
+    const {selectedUser,conversations}= useContext(SelectedUserContext) || {}
     const [message,setMessage] = useState('')
     useListenMessages();
     const lastMessageRef = useRef<HTMLDivElement | null>(null);
@@ -40,7 +36,7 @@ const Conversations = () => {
         <div className='flex flex-col  w-full h-full overflow-auto'>
             {conversations.map((conversation:any,index:any)=>(
                 <div ref={lastMessageRef}>
-                    <Conversation conversation={conversation}/>
+                    <Conversation key={index} conversation={conversation}/>
                 </div>
             ))}
         </div>

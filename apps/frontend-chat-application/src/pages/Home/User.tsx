@@ -1,15 +1,15 @@
 import React,{useContext} from 'react'
-import {SelectedUserContext} from '../../contexts/selectedUserContext'
-import {SocketContext} from '../../contexts/SocketContext'
+import {SelectedUserContext} from '../../contexts/selectedUserContext.jsx'
+import {SocketContext} from '../../contexts/SocketContext.jsx'
 
 const User = ({user}:any) => {
-    const {conversations,setConversations,selectedUser, setSelectedUser}= useContext(SelectedUserContext) || {}
-    const {onlineUsers,setOnlineUsers} = useContext(SocketContext) || {}
+    const {selectedUser, setSelectedUser}= useContext(SelectedUserContext) || {}
+    const {onlineUsers} = useContext(SocketContext) || {}
     const isOnline = onlineUsers?.includes(user._id) ?? false
 
 
   return (
-    <div onClick={e=> setSelectedUser(user)} key={user._id} 
+    <div onClick={()=> setSelectedUser(user)} key={user._id} 
     className={`flex justify-between items-center w-full p-2 text-white border-b-[1px]border-white 
     hover:bg-violet-500 hover:cursor-pointer ${selectedUser._id === user._id ? 'bg-violet-300' : ''}
     `}>

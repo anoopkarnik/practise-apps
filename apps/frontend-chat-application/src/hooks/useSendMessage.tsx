@@ -1,13 +1,13 @@
-import { useContext, useState } from "react";
-import { SelectedUserContext } from "../contexts/selectedUserContext";
+import { useContext } from "react";
+import { SelectedUserContext } from "../contexts/selectedUserContext.jsx";
 import axios from 'axios';
-import toast from "react-hot-toast";
+import {toast} from "react-hot-toast";
 
 const url = import.meta.env.VITE_API_URL + import.meta.env.VITE_API_CONTEXT + import.meta.env.VITE_MESSAGE_CONTEXT;
 
 export const useSendMessage = () =>{
 
-    const {selectedUser,setSelectedUser,conversations,setConversations}= useContext(SelectedUserContext) || {}
+    const {selectedUser,conversations,setConversations}= useContext(SelectedUserContext) || {}
 
     const sendMessage = async({message}:any) =>{
         try{

@@ -1,26 +1,22 @@
 import React, { useState,useEffect, useContext } from 'react'
-import { FaSearch } from "react-icons/fa";
-import { IoIosSend} from "react-icons/io";
 import { BiLogOut } from "react-icons/bi";
-import { useNavigate } from 'react-router-dom';
-import { SelectedUserContext } from '../../contexts/selectedUserContext';
-import { AuthContext } from '../../contexts/AuthContext';
-import useLogout from '../../hooks/useLogout';
-import { useGetUsers } from '../../hooks/useGetUsers';
-import { UsersContext } from '../../contexts/UsersContext';
-import {useGetConversation } from '../../hooks/useGetConversation';
-import { SocketContext } from '../../contexts/SocketContext';
-import User from './User';
+import { SelectedUserContext } from '../../contexts/selectedUserContext.jsx';
+import { AuthContext } from '../../contexts/AuthContext.jsx';
+import useLogout from '../../hooks/useLogout.jsx';
+import { useGetUsers } from '../../hooks/useGetUsers.jsx';
+import { UsersContext } from '../../contexts/UsersContext.jsx';
+import {useGetConversation } from '../../hooks/useGetConversation.jsx';
+import User from './User.jsx';
+
 const Users = () => {
 
-    const navigate = useNavigate()
     const [filter,setFilter] = useState('')
 
-    const {conversations,setConversations,selectedUser, setSelectedUser}= useContext(SelectedUserContext) || {}
-    const {currentUser, setCurrentUser} = useContext(AuthContext) || {}
-    const {users,setUsers} = useContext(UsersContext) || {}
+    const {selectedUser}= useContext(SelectedUserContext) || {}
+    const {currentUser} = useContext(AuthContext) || {}
+    const {users} = useContext(UsersContext) || {}
 
-    const {loading,getUsers} = useGetUsers();
+    const {getUsers} = useGetUsers();
     const { getConversation} = useGetConversation();
 
     const {logout} = useLogout();
@@ -51,7 +47,7 @@ const Users = () => {
                 {users?.filter(user => user.name.startsWith(filter))
                 .filter(user => user._id !== currentUser?._id)
                 .map((user,index)=>(
-                    <User user={user}/>
+                    <User key={index} user={user}/>
                 ))}
             </div>
         </div>

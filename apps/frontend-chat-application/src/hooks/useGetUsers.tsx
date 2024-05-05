@@ -1,13 +1,12 @@
 import { useContext, useState } from 'react';
 import axios from 'axios';
-import { UsersContext } from '../contexts/UsersContext';
-import toast from 'react-hot-toast';
-import { SelectedUserContext } from '../contexts/selectedUserContext';
+import { UsersContext } from '../contexts/UsersContext.jsx';
+import {toast} from 'react-hot-toast';
 
 const url = import.meta.env.VITE_API_URL + import.meta.env.VITE_API_CONTEXT + import.meta.env.VITE_USER_CONTEXT;
 
 export const useGetUsers = () => {
-    const {users,setUsers} = useContext(UsersContext) || {}
+    const {setUsers} = useContext(UsersContext) || {}
     const [loading, setLoading] = useState(false)
 
     const getUsers = async({filter}:any) => {

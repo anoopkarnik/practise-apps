@@ -1,20 +1,19 @@
-import { createContext, useContext, useEffect,useState } from "react";
-import { AuthContext } from "./AuthContext";
+import React,{ createContext, useContext, useEffect,useState } from "react";
+import { AuthContext } from "./AuthContext.jsx";
 import io from "socket.io-client";
-
-const url = import.meta.env.VITE_API_URL
 
 interface SocketContextProps {
     socket: any,
-    onlineUsers: any[]
+    onlineUsers: any[],
+    setOnlineUsers: any
 }
 
 export const SocketContext = createContext <SocketContextProps | null>(null);
 
 export const SocketProvider = ({children}:any) => {
-    const [socket, setSocket] = useState<any>(null);
+    const [socket, setSocket] = useState<any>(null); 
     const [onlineUsers, setOnlineUsers] = useState([]);
-    const {currentUser} = useContext(AuthContext) || {};
+    const { currentUser } = useContext(AuthContext) || {};
 
     useEffect(() => {
         if (currentUser) {
@@ -41,7 +40,7 @@ export const SocketProvider = ({children}:any) => {
         };
     }, [currentUser]);;
     return (
-        <SocketContext.Provider value={{socket,onlineUsers}}>
+        <SocketContext.Provider value={{socket,onlineUsers,setOnlineUsers}}>
             {children}
         </SocketContext.Provider>
     );

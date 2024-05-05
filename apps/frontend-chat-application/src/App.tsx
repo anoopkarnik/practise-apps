@@ -1,13 +1,14 @@
 import { useContext } from 'react'
 import './App.css'
-import { AuthContext } from './contexts/AuthContext'
+import { AuthContext } from './contexts/AuthContext.jsx'
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Signin from './pages/Signin';
-import Signup from './pages/Signup';
-import Home from './pages/Home/Home';
+import Signin from './pages/Signin.jsx';
+import Signup from './pages/Signup.jsx';
+import Home from './pages/Home/Home.jsx';
+import React from 'react';
 
 function App() {
-  const {currentUser,setCurrentUser} = useContext(AuthContext) || {};
+  const {currentUser} = useContext(AuthContext) || {};
 
   return (
     <div className='p-4 h-screen relative w-full flex justify-center items-center '>

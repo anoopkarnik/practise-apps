@@ -1,10 +1,10 @@
 import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-import Button from '../components/Button'
-import Heading from '../components/Heading'
-import Input from '../components/Input'
-import Radio from '../components/Radio'
-import useSignup from '../hooks/useSignup.tsx'
+import Button from '../components/Button.jsx'
+import Heading from '../components/Heading.jsx'
+import Input from '../components/Input.jsx'
+import Radio from '../components/Radio.jsx'
+import useSignup from '../hooks/useSignup.jsx'
 
 const Signup = () => {
     const [username, setUsername] = useState('')
@@ -15,7 +15,7 @@ const Signup = () => {
     const [gender, setGender] = useState('')
     const navigate = useNavigate()
 
-    const {loading,signup} = useSignup()
+    const {signup} = useSignup()
     
 
     const onGenderChange = (event:any) =>{

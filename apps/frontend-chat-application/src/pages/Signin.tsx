@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
-import Heading from '../components/Heading'
-import Input from '../components/Input'
-import Button from '../components/Button'
+import Heading from '../components/Heading.jsx'
+import Input from '../components/Input.jsx'
+import Button from '../components/Button.jsx'
 import { useNavigate } from 'react-router-dom'
-import useSignin from '../hooks/useSignin.tsx'
+import useSignin from '../hooks/useSignin.jsx'
 
 
 const Signin = () => {
@@ -12,7 +12,7 @@ const Signin = () => {
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
 
-    const {loading,signin} = useSignin()
+    const {signin} = useSignin()
 
     const onSignin = async () =>{
         await signin(username,password)

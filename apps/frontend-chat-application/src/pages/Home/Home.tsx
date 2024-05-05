@@ -1,10 +1,10 @@
-import React,{useState,useEffect} from 'react'
+import React,{useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 
-import Users from './Users.tsx';
-import Conversations from './Conversations.tsx';
-import { SelectedUserProvider } from '../../contexts/selectedUserContext';
-import { UsersProvider } from '../../contexts/UsersContext';
+import Users from './Users.jsx';
+import Conversations from './Conversations.jsx';
+import { SelectedUserProvider } from '../../contexts/selectedUserContext.jsx';
+import { UsersProvider } from '../../contexts/UsersContext.jsx';
 
 
 const Home = () => {

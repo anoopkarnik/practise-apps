@@ -10,8 +10,7 @@ services:
       - "3001:3001"
     networks:
       - turborepo-network
-    env_file:
-      - ./apps/paytm-user-app/.env
+
   paytmmerchant-app:
     build:
       context: .
@@ -21,8 +20,7 @@ services:
       - "3002:3002"
     networks:
       - turborepo-network
-    env_file:
-      - ./apps/paytm-merchant-app/.env
+
   app-dashboard:
     build:
       context: .
@@ -32,8 +30,7 @@ services:
       - "3000:3000"
     networks:
       - turborepo-network
-    env_file:
-      - ./apps/app-dashboard/.env
+
   backend-chat-app:
     build:
       context: .
@@ -43,8 +40,7 @@ services:
       - "3004:3004"
     networks:
       - turborepo-network
-    env_file:
-      - ./apps/backend-chat-application/.env
+
   frontend-chat-app:
     build:
       context: .
@@ -54,8 +50,6 @@ services:
       - "3005:3005"
     networks:
       - turborepo-network
-    env_file:
-      - ./apps/frontend-chat-application/.env
 
 networks:
   turborepo-network:

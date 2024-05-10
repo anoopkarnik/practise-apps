@@ -18,8 +18,8 @@ async function page() {
         {
             'title': "Frontend Chat App",
             'description': "A Frontend Express chat application with socket.io and basic authentication",
-            'link': process.env.NEXT_PUBLIC_PAYTM_CHATAPP_URL || "http://localhost:3005",
-            'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/paytmmerchantclone.gif'
+            'link': process.env.NEXT_PUBLIC_PAYTM_CHATAPP_URL || "https://frontendchatapp.practise.bsamaritan.com",
+            'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/basicchat.gif'
         }
     ]
     return <div className="grid grid-cols-1 md:grid-cols-3 ">

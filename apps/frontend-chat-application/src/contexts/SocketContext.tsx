@@ -9,6 +9,8 @@ interface SocketContextProps {
 }
 
 export const SocketContext = createContext <SocketContextProps | null>(null);
+const url = import.meta.env.VITE_API_URL;
+
 
 export const SocketProvider = ({children}:any) => {
     const [socket, setSocket] = useState<any>(null); 
@@ -17,7 +19,7 @@ export const SocketProvider = ({children}:any) => {
 
     useEffect(() => {
         if (currentUser) {
-            const socket = io('http://localhost:3004', {
+            const socket = io(url, {
                 query: {
                     userId: currentUser._id,
                 }

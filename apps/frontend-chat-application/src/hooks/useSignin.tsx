@@ -3,12 +3,13 @@ import axios from 'axios'
 import {AuthContext } from '../contexts/AuthContext.jsx'
 import {toast} from 'react-hot-toast';
 
-const api_url = import.meta.env.VITE_API_URL || 'http://localhost:3004';
-const api_context = import.meta.env.VITE_API_CONTEXT || 'api/v1';
-const auth_context = import.meta.env.VITE_AUTH_CONTEXT || '/auth';
-const url = api_url + api_context + auth_context;
-
 const useSignin = () => {
+    const api_url = import.meta.env.VITE_API_URL
+    const api_context = import.meta.env.VITE_API_CONTEXT
+    const auth_context = import.meta.env.VITE_AUTH_CONTEXT
+    const url = api_url + api_context + auth_context;
+    console.log(url)
+
     const [loading,setLoading] = useState(false);
     const {setCurrentUser} = useContext(AuthContext) || {};
     

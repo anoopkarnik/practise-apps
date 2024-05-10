@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  paytmuser-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.paytmUserApp
+    image: anoopkarnik/turborepo-boilerplate-paytm-user-app:latest
+    ports:
+      - "3001:3001"
+    networks:
+      - turborepo-network
+    env_file:
+      - ./apps/paytm-user-app/.env
+
+  paytmmerchant-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.paytmMerchantApp
+    image: anoopkarnik/turborepo-boilerplate-paytm-merchant-app:latest
+    ports:
+      - "3002:3002"
+    networks:
+      - turborepo-network
+    env_file:
+      - ./apps/paytm-merchant-app/.env
+
+  app-dashboard:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.appDashboard
+    image: anoopkarnik/turborepo-boilerplate-app-dashboard:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - turborepo-network
+    env_file:
+      - ./apps/app-dashboard/.env
+
+  backend-chat-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.backendChatApp
+    image: anoopkarnik/turborepo-boilerplate-backend-chat-app:latest
+    ports:
+      - "3004:3004"
+    networks:
+      - turborepo-network
+    env_file:
+      - ./apps/backend-chat-application/.env
+
+  frontend-chat-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.frontendChatApp
+    image: anoopkarnik/turborepo-boilerplate-frontend-chat-app:latest
+    ports:
+      - "3005:3005"
+    networks:
+      - turborepo-network
+    env_file:
+      - ./apps/frontend-chat-application/.env
+
+networks:
+  turborepo-network:
+    driver: bridge

@@ -43,7 +43,7 @@ const Users = () => {
             <div className='flex justify-between items-center w-full gap-4'>
                 <input onChange={(e)=> setFilter(e.target.value)} className='w-full rounded-full bg-gray-700 p-2 px-4 text-white mx-4' placeholder='Search...'></input>
             </div>
-            <div className='flex flex-col py-4 my-4 w-[90%] border-t-[1px] border-white overflow-auto'>
+            <div className='flex flex-col py-4 my-4 w-[90%] border-t-[1px] border-white overflow-clip'>
                 {users?.filter(user => user.name.startsWith(filter))
                 .filter(user => user._id !== currentUser?._id)
                 .map((user,index)=>(

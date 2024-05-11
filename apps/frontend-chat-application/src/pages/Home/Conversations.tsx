@@ -19,6 +19,13 @@ const Conversations = () => {
         await sendMessage({ message });
         setMessage('');
     };
+    const handleKeyPress = (event:any) =>{
+        if(event.key === 'Enter'){
+            onSendMessage();
+            event.preventDefault();
+        }
+    
+    }
 
     useEffect(() => {
         setTimeout(() => {
@@ -40,8 +47,9 @@ const Conversations = () => {
                 </div>
             ))}
         </div>
-        <div className='bg-gray-700 w-[90%] m-4 p-4  flex justify-between items-center overflow-hidden border-black border-2 rounded-xl'>
-            <input onChange={e=>setMessage(e.target.value)} className='text-white bg-gray-700 w-full' placeholder='Send a message' 
+        <div className='bg-gray-700 w-[90%] flex pr-4 mx-2 gap-4 justify-between items-center overflow-hidden border-black border-2 rounded-r-xl'>
+            <input onChange={e=>setMessage(e.target.value)} onKeyDown={handleKeyPress}
+             className='h-full p-4  text-white bg-gray-700 w-full' placeholder='Send a message' 
             value={message}/>
             <IoIosSend onClick={onSendMessage} className='text-3xl text-white'/>
         </div>

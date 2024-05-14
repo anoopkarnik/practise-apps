@@ -20,7 +20,7 @@ function App() {
         </Routes>
       </div>
       <a href="https://app-dashboard.bsamaritan.com" rel="noopener noreferrer">
-        <div className='absolute rounded-full p-6 m-4 bottom-0 left-0 bg-white'>
+        <div className='absolute rounded-full p-6 m-4 bottom-0 left-0 bg-white hover:bg-violet-400 hover:text-white'>
           <HomeIcon/>
         </div>
       </a>

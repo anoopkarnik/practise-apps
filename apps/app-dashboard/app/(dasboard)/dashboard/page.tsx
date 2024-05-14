@@ -18,7 +18,13 @@ async function page() {
         {
             'title': "Frontend Chat App",
             'description': "A Frontend Express chat application with socket.io and basic authentication",
-            'link': process.env.NEXT_PUBLIC_PAYTM_CHATAPP_URL || "https://frontendchatapp.practise.bsamaritan.com",
+            'link': process.env.NEXT_PUBLIC_CHATAPP_URL || "https://frontendchatapp.practise.bsamaritan.com",
+            'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/basicchat.gif'
+        },
+        {
+            'title': "Fancy Web Pages App",
+            'description': "A Frontend React app with fancy web pages of different type of sites",
+            'link': process.env.NEXT_PUBLIC_FANCY_WEBPAGES_URL || "https://fancywebpages.practise.bsamaritan.com",
             'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/basicchat.gif'
         }
     ]

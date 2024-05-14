@@ -50,6 +50,16 @@ services:
       - "3005:3005"
     networks:
       - turborepo-network
+  
+  fancy-web-pages-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.fancyWebPagesApp
+    image: anoopkarnik/turborepo-boilerplate-fancy-web-pages-app:latest
+    ports:
+      - "3006:3006"
+    networks:
+      - turborepo-network
 
 networks:
   turborepo-network:

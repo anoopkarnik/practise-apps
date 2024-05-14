@@ -60,6 +60,18 @@ services:
       - turborepo-network
     env_file:
       - ./apps/frontend-chat-application/.env
+  
+  fancy-web-pages-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.fancyWebPagesApp
+    image: anoopkarnik/turborepo-boilerplate-fancy-web-pages-app:latest
+    ports:
+      - "3006:3006"
+    networks:
+      - turborepo-network
+    env_file:
+      - ./apps/fancy-web-pages-app/.env
 
 networks:
   turborepo-network:

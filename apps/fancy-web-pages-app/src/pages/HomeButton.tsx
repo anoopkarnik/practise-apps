@@ -8,7 +8,7 @@ export default function HomeButton() {
     }
 
   return (
-    <div onClick={handleClick} className='fixed bottom-0 left-0 bg-black rounded-full text-white p-6 m-6 hover:bg-violet-500 cursor-pointer'>
+    <div onClick={handleClick} className='fixed z-10 bottom-0 left-0 bg-black rounded-full text-white p-6 m-6 hover:bg-violet-500 cursor-pointer'>
         HOME
     </div>
   )

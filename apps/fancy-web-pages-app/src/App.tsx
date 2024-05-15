@@ -6,6 +6,12 @@ import Home from './pages/Home.tsx'
 import HomeButton from './pages/HomeButton.tsx'
 import LandingPage2 from './pages/LandingPage2.tsx'
 import LandingPage3 from './pages/LandingPage3.tsx'
+import AnimatedNavBar from './pages/AnimatedNavBar.tsx'
+import CartClone from './pages/CartClone.tsx'
+import MusicPlayerClone from './pages/MusicPlayerClone.tsx'
+import PininterestClone from './pages/PininterestClone.tsx'
+import PositionPractise from './pages/PositionPractise.tsx'
+import ProfilePage from './pages/ProfilePage.tsx'
 
 function App() {
 
@@ -17,9 +23,15 @@ function App() {
           <Route path='/landing1' element={<div><LandingPage1/>        <HomeButton/></div>} />
           <Route path='/landing2' element={<div><LandingPage2/>        <HomeButton/></div>} />
           <Route path='/landing3' element={<div><LandingPage3/>        <HomeButton/></div>} />
+          <Route path='/animatednavbar' element={<div><AnimatedNavBar/>        <HomeButton/></div>} />
+          <Route path='/cart' element={<div><CartClone/>       <HomeButton/></div>} />
+          <Route path='/musicplayer' element={<div><MusicPlayerClone/>     <HomeButton/></div>} />
+          <Route path='/pinterest' element={<div><PininterestClone/>       <HomeButton/></div>} />
+          <Route path='/position' element={<div><PositionPractise/>       <HomeButton/></div>} />
+          <Route path='/staffprofiles' element={<div><ProfilePage/>       <HomeButton/></div>} />
         </Routes>
         <a href="https://app-dashboard.bsamaritan.com" rel="noopener noreferrer">
-          <div className='absolute rounded-full p-6 m-4 bottom-0 left-0 bg-white hover:bg-violet-400 hover:text-white'>
+          <div className='fixed rounded-full p-6 m-4 bottom-0 left-0 bg-white hover:bg-violet-400 hover:text-white'>
             <HomeIcon/>
           </div>
         </a>

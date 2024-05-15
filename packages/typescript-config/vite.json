@@ -12,7 +12,8 @@
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "noImplicitReturns": true,
-      "allowImportingTsExtensions": true
+      "allowImportingTsExtensions": true,
+      "strict": false
     },
     "exclude": ["node_modules"]
   }

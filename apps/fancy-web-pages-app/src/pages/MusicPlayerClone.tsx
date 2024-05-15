@@ -2,8 +2,15 @@ import React,{useState,useRef,useEffect} from 'react'
 import { FaPlay,FaPause } from "react-icons/fa";
 import { IoPlaySkipBackSharp, IoPlaySkipForwardSharp } from "react-icons/io5";
 
+type songProps = {
+    name: string,
+    src: string,
+    music: string
+
+}
+
 export default function MusicPlayerClone() {
-    const songs = [
+    const songs:songProps[] = [
         {
             'name': 'Hello',
             'src': './adele.jpg',
@@ -24,13 +31,16 @@ export default function MusicPlayerClone() {
     const [isPlaying,setIsPlaying] = useState(false)
     const audio = useRef(new Audio());
 
-  useEffect(() => {
+useEffect(() => {
     // Change the source of the audio element when the selected song changes
-    audio.current.src = songs[selected].src;
-    if (isPlaying) {
-      audio.current.play();
+    if (audio.current) {
+        var selectedSong:songProps = songs[selected];
+        audio.current.src = selectedSong.music;
+        if (isPlaying) {
+            audio.current.play();
+        }
     }
-  }, [selected]);
+}, [selected]);
 
     const handlePlayPause = () =>{
         console.log(isPlaying)

@@ -12,6 +12,7 @@ import MusicPlayerClone from './pages/MusicPlayerClone.tsx'
 import PininterestClone from './pages/PininterestClone.tsx'
 import PositionPractise from './pages/PositionPractise.tsx'
 import ProfilePage from './pages/ProfilePage.tsx'
+import AnimatedLandingPage from './pages/AnimatedLandingPage.tsx'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='/pinterest' element={<div><PininterestClone/>       <HomeButton/></div>} />
           <Route path='/position' element={<div><PositionPractise/>       <HomeButton/></div>} />
           <Route path='/staffprofiles' element={<div><ProfilePage/>       <HomeButton/></div>} />
+          <Route path='/animatedlanding' element={<div><AnimatedLandingPage/>      <HomeButton/></div>} />
         </Routes>
         <a href="https://app-dashboard.bsamaritan.com" rel="noopener noreferrer">
           <div className='fixed rounded-full p-6 m-4 bottom-0 left-0 bg-white hover:bg-violet-400 hover:text-white'>

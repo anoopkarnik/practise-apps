@@ -9,7 +9,6 @@ import { CiBookmark, CiUser } from "react-icons/ci";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { MdOutlineCleaningServices } from "react-icons/md";
 import { IoHomeSharp } from "react-icons/io5";
-import { CiCirclePlus } from "react-icons/ci";
 import { FaPlus } from "react-icons/fa6";
 import { IoIosSettings } from 'react-icons/io';
 

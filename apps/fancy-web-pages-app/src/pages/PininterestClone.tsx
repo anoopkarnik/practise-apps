@@ -83,7 +83,7 @@ export default function PininterestClone() {
                 </div>
                 <div className={`w-full bg-white text-left pl-20 mx-10 my-4 absolute top-full left-1/2 -translate-x-1/2 rounded-md py-3 ${searchSelected ?'':'hidden'}`}>
                         
-                        {animes.filter((anime)=>anime.name.toLowerCase().startsWith(searchText)).slice(0,10).map((anime,index)=>{
+                        {animes.filter((anime)=>anime.name.toLowerCase().startsWith(searchText)).slice(0,10).map((anime)=>{
                             return(
                                 <div className='flex gap-4 text-2xl'>
                                     <FaSearch/>

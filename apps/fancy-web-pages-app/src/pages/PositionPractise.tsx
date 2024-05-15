@@ -1,11 +1,11 @@
-import { Button } from '@repo/ui/components/button'
+
 import React from 'react'
 
 export default function PositionPractise() {
   return (
     <div className='bg-white w-full'>
         <div className='fixed top-1/2 bg-blue-800 text-white text-2xl rounded-xl p-2 z-10'>
-            <Button>Button</Button>
+            <div>Button</div>
         </div>
         <div id="one" className='w-full h-[100vh]'>
             <div className='bg-blue-300 text-[100px] text-white sticky top-0'>Header One</div>

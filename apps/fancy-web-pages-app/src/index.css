@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark{
+  background-color: #000;
+  color: #fff;
+}
+
+.cyan{
+  background-color: cyan;
+  color: #333;
+}
+
+.salmon{
+  background-color: salmon;
+  color: #333;
+}
+
+.light{
+  background-color: #fff;
+  color: #333;
+}

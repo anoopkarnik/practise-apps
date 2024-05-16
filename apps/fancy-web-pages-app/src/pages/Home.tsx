@@ -57,12 +57,12 @@ const Pages = [
         'link': "/staffprofiles",
         'image': './profile.gif'
     },
-    {
-        'title': "Animated Landing Page",
-        'description': "A page with lot of animations for a company landing page",
-        'link': "/animatedlanding",
-        'image': './profile.gif'
-    }
+    // {
+    //     'title': "Animated Landing Page",
+    //     'description': "A page with lot of animations for a company landing page",
+    //     'link': "/animatedlanding",
+    //     'image': './profile.gif'
+    // }
 
 ]
 export default function Home() {

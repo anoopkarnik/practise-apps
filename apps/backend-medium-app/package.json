@@ -1,10 +1,13 @@
 {
   "scripts": {
-    "dev": "wrangler dev src/index.ts",
+    "dev": "wrangler dev src/index.ts --port 3007",
     "deploy": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {
-    "hono": "^4.3.4"
+    "@prisma/extension-accelerate": "^1.0.0",
+    "hono": "^4.3.7",
+    "prisma": "^5.14.0",
+    "@repo/zod-validations": "*"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240403.0",

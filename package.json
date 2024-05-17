@@ -12,7 +12,8 @@
     "start-app-dashboard": "cd ./apps/app-dashboard && npm run start",
     "start-backend-chat-app": "cd ./apps/backend-chat-application && npm run start",
     "start-frontend-chat-app": "cd ./apps/frontend-chat-application && npm run start",
-    "start-fancy-web-pages-app": "cd ./apps/fancy-web-pages-app && npm run start"
+    "start-fancy-web-pages-app": "cd ./apps/fancy-web-pages-app && npm run start",
+    "start-blog-app": " cd ./apps/frontend-medium-app && npm run start"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

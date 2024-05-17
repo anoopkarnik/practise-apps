@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json turbo.json tsconfig.json ./
 
-COPY apps/frontend-medium-app ./apps/frontend-medium-app
+COPY apps/frontend-chat-application ./apps/frontend-chat-application
 COPY packages ./packages
 
 EXPOSE 3008
@@ -13,4 +13,4 @@ RUN npm install
 
 RUN npm run build
 
-CMD ["npm", "run", "start-frontend-chat-app"]
+CMD ["npm", "run", "start-blog-app"]

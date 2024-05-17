@@ -72,6 +72,18 @@ services:
       - turborepo-network
     env_file:
       - ./apps/fancy-web-pages-app/.env
+  
+  blog-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.frontendBlogApp
+    image: anoopkarnik/turborepo-boilerplate-blog-app:latest
+    ports:
+      - "3008:3008"
+    networks:
+      - turborepo-network
+    env_file:
+      - ./apps/frontend-medium-app/.env
 
 networks:
   turborepo-network:

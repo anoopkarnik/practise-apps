@@ -60,6 +60,16 @@ services:
       - "3006:3006"
     networks:
       - turborepo-network
+  
+  blog-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.frontendBlogApp
+    image: anoopkarnik/turborepo-boilerplate-blog-app:latest
+    ports:
+      - "3008:3008"
+    networks:
+      - turborepo-network
 
 networks:
   turborepo-network:

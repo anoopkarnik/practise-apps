@@ -22,7 +22,7 @@ export const BlogCard = ({id,title,authorName,content,publishedDate}: BlogCardPr
         <div className='flex flex-col border-[1px] p-4 w-[80%] lg:w-[40%] ' onClick={()=>{handleNavigate({id})}}>
             <div className='flex jusitfy-center items-center mb-1'>
                 <div className='flex flex-col justify-center items-center mr-2'>
-                    <Avatar name={authorName} size={"6"}/>
+                    <Avatar name={authorName} size={"small"}/>
                 </div>
                 <div className='flex justify-center items-center'>{authorName[0].toUpperCase() + authorName.slice(1).split(' ')[0]} </div>
                 <div className='flex items-center justify-center rounded-full bg-gray-500 w-1 h-1 ml-2'></div>

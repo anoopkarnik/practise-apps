@@ -1,22 +1,24 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import PostPage from '../components/PostPage.tsx';
+import { useBlog } from '../hooks/index.ts';
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-export default function Publish() {
-
-    const [title,setTitle] = useState('')
-    const [content,setContent] = useState('')
+export default function EditPost() {
+    const {id} = useParams()
+    const {blog}  = useBlog({id});
     const navigate = useNavigate()
     const user = localStorage.getItem('user');
     const token = JSON.parse(user).jwt;
+    const [setTitle] = useState('')
+    const [setContent] = useState('')
 
     const publishPost = async () => {
         try {
-            const response = await axios.post(`${BACKEND_URL}/api/v1/blog`,
-             {title,content},
+            const response = await axios.put(`${BACKEND_URL}/api/v1/blog`,
+             {id, title: blog.title, content: blog.content}, // Added curly braces around object properties
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -32,7 +34,7 @@ export default function Publish() {
 
   return (
     <div>
-        <PostPage title={title} content={content} setTitle={setTitle} setContent={setContent} publishPost={publishPost}/>
+        <PostPage title={blog.title} content={blog.content} setTitle={setTitle} setContent={setContent} publishPost={publishPost}/>
     </div>
   )
 }

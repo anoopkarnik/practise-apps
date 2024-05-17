@@ -17,13 +17,14 @@ export const useBlogs = () =>{
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
+        const user = localStorage.getItem('user');
+        const jwt = JSON.parse(user || '{}').jwt;
         axios.get(`${BACKEND_URL}/api/v1/blog/bulk`,{
             headers: {
-                Authorization:  `Bearer ${localStorage.getItem('token')}`
+                Authorization:  `Bearer ${jwt}`
             }
         }        )
         .then((response)=>{
-            console.log(response.data)
             setBlogs(response.data.posts);
             setLoading(false);
         })  
@@ -46,7 +47,6 @@ export const useBlog = ({id}:{id:string}) =>{
             }
         }        )
         .then((response)=>{
-            console.log(response.data)
             setBlog(response.data.post);
             setLoading(false);
         })  

@@ -13,9 +13,9 @@ export default function Auth({type}: {type: "signup" | "signin"}) {
     async function sendRequest(){
         try{
             const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type}`, postInputs)
-            const jwt = response.data.jwt;
-            localStorage.setItem('token',jwt)
-            navigate('/blogs')
+            const user = response.data;
+            localStorage.setItem('user',JSON.stringify(user))
+            navigate('/blog')
         }catch(e){
             alert("Error while signing up")
             console.log(e)
@@ -25,8 +25,8 @@ export default function Auth({type}: {type: "signup" | "signin"}) {
   return (
     <div className="h-screen flex justify-center flex-col ">
         <div className="text-3xl text-center font-black">Create an account</div>
-        <div className="text-slate-400 mb-10">{type==='signin' ? "Don't have an Account" : 'Already have an account'} 
-            <Link to={type === 'signin' ? '/signup': '/signin'}>
+        <div className="text-slate-400 mb-10 text-center">{type==='signin' ? "Don't have an Account" : 'Already have an account'} 
+            <Link to={type === 'signin' ? '/signup': '/signin'} className='hover:text-blue-400'>
                 {type === 'signin' ? ' Sign up' :' Sign in'}
             </Link>
         </div>

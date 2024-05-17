@@ -25,7 +25,13 @@ async function page() {
             'title': "Fancy Web Pages App",
             'description': "A Frontend React app with fancy web pages of different type of sites",
             'link': process.env.NEXT_PUBLIC_FANCY_WEBPAGES_URL || "https://fancywebpages.practise.bsamaritan.com",
-            'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/basicchat.gif'
+            'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/web_pages.png'
+        },
+        {
+            'title': "Medium Clone App",
+            'description': "Clone of medium app with vite frontend and cloudflare worker hono backend",
+            'link': process.env.NEXT_PUBLIC_BLOG_URL || "https://blog.practise.bsamaritan.com",
+            'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/blog.gif'
         }
     ]
     return <div className="m-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-max">

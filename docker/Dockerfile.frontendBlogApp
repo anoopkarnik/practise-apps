@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json turbo.json tsconfig.json ./
 
-COPY apps/frontend-chat-application ./apps/frontend-chat-application
+COPY apps/frontend-medium-app ./apps/frontend-medium-app
 COPY packages ./packages
 
 EXPOSE 3008

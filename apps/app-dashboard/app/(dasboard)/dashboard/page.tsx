@@ -32,6 +32,12 @@ async function page() {
             'description': "Clone of medium app with vite frontend and cloudflare worker hono backend",
             'link': process.env.NEXT_PUBLIC_BLOG_URL || "https://blog.practise.bsamaritan.com",
             'image': 'https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/blog.gif'
+        },
+        {
+            "title": "Openspec API App",
+            "description": "A Hono app with zod-openapi for creating openapi spec",
+            "link": process.env.NEXT_PUBLIC_OPENAPI_URL || "https://hono-zod-openapispec-app.anoopkarnikofficial-e44.workers.dev",
+            "image": "https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/openspec-api.gif"
         }
     ]
     return <div className="m-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-max">

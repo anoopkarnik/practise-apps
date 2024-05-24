@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Routes,Route} from 'react-router-dom'
 import {Sender} from './components/Sender.js'
 import {Receiver} from './components/Receiver.js'
 import React from 'react'
-import Rooms from './components/Rooms.tsx'
+
 
 function App() {
 

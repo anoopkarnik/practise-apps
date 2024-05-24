@@ -19,3 +19,6 @@ compatibility_date = "2023-12-01"
 
 # [ai]
 # binding = "AI"
+routes=[
+    {pattern = "openspecapi.practise.bsamaritan.net", custom_domain = true}
+]

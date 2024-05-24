@@ -36,7 +36,7 @@ async function page() {
         {
             "title": "Openspec API App",
             "description": "A Hono app with zod-openapi for creating openapi spec",
-            "link": process.env.NEXT_PUBLIC_OPENAPI_URL || "https://hono-zod-openapispec-app.anoopkarnikofficial-e44.workers.dev",
+            "link": process.env.NEXT_PUBLIC_OPENAPI_URL || "https://openspecapi.practise.bsamaritan.net/ui",
             "image": "https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/openspec-api.gif"
         }
     ]

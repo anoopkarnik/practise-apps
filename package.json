@@ -13,7 +13,10 @@
     "start-backend-chat-app": "cd ./apps/backend-chat-application && npm run start",
     "start-frontend-chat-app": "cd ./apps/frontend-chat-application && npm run start",
     "start-fancy-web-pages-app": "cd ./apps/fancy-web-pages-app && npm run start",
-    "start-blog-app": " cd ./apps/frontend-medium-app && npm run start"
+    "start-blog-app": " cd ./apps/frontend-medium-app && npm run start",
+    "start-backend-webrtc-app": "cd ./apps/backend-webrtc-app && npm run start", 
+    "start-webrtc-app": "cd ./apps/frontend-webrtc-app && npm run start"
+
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

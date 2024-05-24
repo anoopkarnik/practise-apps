@@ -1,0 +1,16 @@
+FROM node:20.12.0-alpine3.19
+
+WORKDIR /app
+
+COPY package.json package-lock.json turbo.json tsconfig.json ./
+
+COPY apps/backend-webrtc-app ./apps/backend-webrtc-app
+COPY packages ./packages
+
+EXPOSE 3012
+
+RUN npm install
+
+RUN npm run build
+
+CMD ["npm", "run", "start-backend-webrtc-app"]

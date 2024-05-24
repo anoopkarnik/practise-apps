@@ -71,6 +71,26 @@ services:
     networks:
       - turborepo-network
 
+  backend-webrtc-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.backendWebrtcApp
+    image: anoopkarnik/turborepo-boilerplate-backend-webrtc-app:latest
+    ports:
+      - "3012:3012"
+    networks:
+      - turborepo-network
+
+  frontend-webrtc-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.frontendWebrtcApp
+    image: anoopkarnik/turborepo-boilerplate-frontend-webrtc-app:latest
+    ports:
+      - "3011:3011"
+    networks:
+      - turborepo-network
+
 networks:
   turborepo-network:
     driver: bridge

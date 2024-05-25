@@ -27,7 +27,7 @@ jobs:
 
     - name: Build and Push Docker image
       run: |
-        for dir in $(echo "${{ steps.changes.outputs.modified_files }}" | tr ',' '\n' | sed 's|/[^/]*$||' | sort | uniq); do
+        for dir in $(echo "${{ steps.changes.outputs.modified_files }}" | tr ',' '\n' | sed 's|^\([^/]*\)/\([^/]*\).*|\1/\2|' | sort | uniq); do
           if [[ $dir == apps/* ]]; then
             app_name=$(basename $dir)
             echo "Building and pushing $app_name"
@@ -45,7 +45,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          CHANGED_APPS=$(echo "${{ steps.changes.outputs.modified_files }}" | tr ',' '\n' | sed 's|/[^/]*$||' | sort | uniq | grep '^apps/' | xargs -n 1 basename)
+          CHANGED_APPS=$(echo "${{ steps.changes.outputs.modified_files }}" | tr ',' '\n' | sed 's|^\([^/]*\)/\([^/]*\).*|\1/\2|' | sort | uniq | grep '^apps/' | xargs -n 1 basename)
           cd /home/ubuntu/turborepo-apps
           for app in $CHANGED_APPS; do
             echo "Deploying $app"

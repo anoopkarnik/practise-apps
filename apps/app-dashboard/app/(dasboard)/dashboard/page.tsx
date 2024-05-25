@@ -38,6 +38,12 @@ async function page() {
             "description": "A Hono app with zod-openapi for creating openapi spec",
             "link": process.env.NEXT_PUBLIC_OPENAPI_URL || "https://openspecapi.practise.bsamaritan.net/ui",
             "image": "https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/openspec-api.gif"
+        },
+        {
+            "title": "WebRTC App",
+            "description": "A WebRTC server to share video stream",
+            "link": process.env.NEXT_PUBLIC_WEBRTCAPP_URL || "https://webrtc.practise.bsamaritan.com",
+            "image": "https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/webrtc.gif"
         }
     ]
     return <div className="m-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-max">

@@ -1,12 +1,17 @@
 import React,{ useEffect, useRef } from "react"
 import Video from "./Video.js";
 
-
 export const Receiver = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
     
     useEffect(() => {
-        const socket = new WebSocket('ws://localhost:3012');
+        let websocketServer;
+        websocketServer = import.meta.env.VITE_WS_URL + ":" +import.meta.env.VITE_PORT ;
+        if (!import.meta.env.VITE_WS_URL) {
+            websocketServer  = 'ws://backend-webrtc.practise.bsamaritan.com'
+        }
+        console.log(websocketServer)  
+        const socket = new WebSocket(websocketServer);
         socket.onopen = () => {
             socket.send(JSON.stringify({
                 type: 'receiver'

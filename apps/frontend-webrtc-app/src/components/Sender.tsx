@@ -6,7 +6,12 @@ export const Sender = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
-        const socket = new WebSocket('ws://localhost:3012');
+        let websocketServer;
+        websocketServer = import.meta.env.VITE_WS_URL + ":" +import.meta.env.VITE_PORT ;
+        if (!import.meta.env.VITE_WS_URL) {
+            websocketServer  = 'ws://backend-webrtc.practise.bsamaritan.com'
+        }
+        const socket = new WebSocket(websocketServer);
         setSocket(socket);
         socket.onopen = () => {
             socket.send(JSON.stringify({

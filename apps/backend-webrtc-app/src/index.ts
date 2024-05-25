@@ -1,6 +1,7 @@
 import {WebSocketServer, WebSocket} from 'ws';
+require('dotenv').config();
 
-const wss = new WebSocketServer({port: 3012});
+const wss = new WebSocketServer({port: Number(process.env.PORT)});
 
 let senderSocket: null | WebSocket = null;
 let receiverSocket: null | WebSocket = null;

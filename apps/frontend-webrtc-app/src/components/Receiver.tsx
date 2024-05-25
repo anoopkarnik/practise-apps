@@ -8,7 +8,7 @@ export const Receiver = () => {
         let websocketServer;
         websocketServer = import.meta.env.VITE_WS_URL + ":" +import.meta.env.VITE_PORT ;
         if (!import.meta.env.VITE_WS_URL) {
-            websocketServer  = 'ws://https://backend-webrtc.practise.bsamaritan.com'
+            websocketServer  = 'wss://backend-webrtc.practise.bsamaritan.com'
         }
         console.log(websocketServer)  
         const socket = new WebSocket(websocketServer);

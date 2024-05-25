@@ -11,7 +11,14 @@ jobs:
     steps:
     - name: Check Out Repo
       uses: actions/checkout@v2
-
+    
+    - name: Determine Changed Directories
+      id: changes
+      uses: tj-actions/changed-files@v34
+      with:
+        files: |
+          apps/**/*
+    
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
       with:
@@ -20,8 +27,14 @@ jobs:
 
     - name: Build and Push Docker image
       run: |
-        docker-compose build
-        docker-compose push
+        for dir in $(echo "${{ steps.changes.outputs.modified_files }}" | tr ',' '\n' | sed 's|/[^/]*$||' | sort | uniq); do
+          if [[ $dir == apps/* ]]; then
+            app_name=$(basename $dir)
+            echo "Building and pushing $app_name"
+            docker-compose build $app_name
+            docker-compose push $app_name
+          fi
+        done
 
     - name: Deploy to EC2
       uses: appleboy/ssh-action@master
@@ -32,6 +45,11 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          cd /home/ubuntu/turborepo-apps && sudo docker-compose pull
-          cd /home/ubuntu/turborepo-apps && sudo docker-compose down
-          cd /home/ubuntu/turborepo-apps && sudo docker-compose up -d
+          CHANGED_APPS=$(echo "${{ steps.changes.outputs.modified_files }}" | tr ',' '\n' | sed 's|/[^/]*$||' | sort | uniq | grep '^apps/' | xargs -n 1 basename)
+          cd /home/ubuntu/turborepo-apps
+          for app in $CHANGED_APPS; do
+            echo "Deploying $app"
+            cd /home/ubuntu/turborepo-apps && sudo docker-compose pull $app
+            cd /home/ubuntu/turborepo-apps && sudo docker-compose rm -f $app
+            cd /home/ubuntu/turborepo-apps &&sudo docker-compose up -d $app
+          done

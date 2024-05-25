@@ -46,7 +46,7 @@ async function page() {
             "image": "https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/webrtc.gif"
         },
         {
-            "title": "WebRTC App",
+            "title": "Trial App",
             "description": "A WebRTC server to share video stream",
             "link": process.env.NEXT_PUBLIC_WEBRTCAPP_URL || "https://webrtc.practise.bsamaritan.com",
             "image": "https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/webrtc.gif"

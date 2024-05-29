@@ -10,7 +10,7 @@ export const Sidebar = ({
     items
 }: ItemsProps) => {
     return (
-        <div className="w-72 border-r border-slate-300 dark:border-slate-900 min-h-screen mr-4 pt-10">
+        <div className="w-72 border-r border-slate-300 dark:border-slate-900 min-h-screen mr-4 pt-10 dark:bg-foreground ">
             <div>
                 {items?.map((item, index) => (
                     <SidebarItem key={index} href={item.href} icon={item.icon} title={item.title} />

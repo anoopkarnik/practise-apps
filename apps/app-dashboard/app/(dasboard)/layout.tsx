@@ -18,7 +18,7 @@ export default function Layout({
     <div>
         <AppbarClient/>
         <div className="flex">
-           <Sidebar items={SIDEBAR_ITEMS}/>
+           {/* <Sidebar items={SIDEBAR_ITEMS}/> */}
             {children}
         </div>
     </div>

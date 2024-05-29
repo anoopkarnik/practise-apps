@@ -105,6 +105,26 @@ services:
     networks:
       - turborepo-network
 
+  backend-chess-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.backendChessApp
+    image: anoopkarnik/turborepo-boilerplate-backend-chess-app:latest
+    ports:
+      - "3013:3013"
+    networks:
+      - turborepo-network
+
+  frontend-chess-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.frontendChessApp
+    image: anoopkarnik/turborepo-boilerplate-frontend-chess-app:latest
+    ports:
+      - "3014:3014"
+    networks:
+      - turborepo-network
+
 networks:
   turborepo-network:
     driver: bridge

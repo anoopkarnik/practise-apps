@@ -1,11 +1,14 @@
 import { WebSocketServer } from "ws";
+import { GameManager } from "./GameManager";
+require('dotenv').config();
 
-const wss = new WebSocketServer({ port: 3013 });        
+const wss = new WebSocketServer({ port: Number(process.env.WS_PORT) });
+
+const gameManager = new GameManager();  
 
 wss.on('connection',(ws)=>{
-    ws.on('error',console.error);
-    ws.on('message', function message(data){
-        console.log(data);
-        ws.send(data);
-    })
+    gameManager.addUser(ws);
+    ws.on('disconnect',()=>{
+        gameManager.removeUser(ws);
+    });
 })

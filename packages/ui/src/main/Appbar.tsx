@@ -19,7 +19,7 @@ export const Appbar = ({
     onSignin,
     onSignout
 }: AppbarProps) => {
-    return <div className="flex justify-between border-b p-4 dark:bg-foreground">
+    return <div className="flex justify-between border-b p-4 dark:bg-foreground px-10">
         <div className="text-2xl dark:text-white flex justify-center items-center gap-4">
             {icon && <img src={icon} alt="icon" className="w-8 h-8"/>}
             {title}

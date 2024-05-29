@@ -24,7 +24,7 @@ export class Game{
             console.log(move)
             this.board.move(move);
         }catch(e){
-            console.log('invalid move or not your turn')
+            console.log('invalid move or not your turn !!')
             return
         }
         if (this.board.isGameOver()){

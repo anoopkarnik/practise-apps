@@ -1,5 +1,5 @@
 import { Color, PieceSymbol, Square } from 'chess.js'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { MOVE } from '../pages/Game.tsx';
 
 interface ChessboardProps {
@@ -10,7 +10,6 @@ interface ChessboardProps {
 
 const Chessboard = ({board,socket,moves,setMoves}:{board:(ChessboardProps | null)[][],socket: WebSocket,moves:any,setMoves:any}) => {
     const [from, setFrom] = useState<null | Square>(null)
-    const [to, setTo] = useState<null | Square>(null)
 
   return (
     <div className='text-white-200'>
@@ -29,7 +28,6 @@ const Chessboard = ({board,socket,moves,setMoves}:{board:(ChessboardProps | null
                                     socket.send(JSON.stringify({type: MOVE,move: {from:from, to:squareRepresentation}}))
                                     setMoves([...moves, (square?.type != 'p'? square?.type.toUpperCase() : '') + squareRepresentation])
                                     setFrom(null)
-                                    setTo(null)
                                 }
                             }
                         

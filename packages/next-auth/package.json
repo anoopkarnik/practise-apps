@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "exports": {
-    "./auth": "./index.ts"
+    "./auth": "./src/index.ts"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.5.2",

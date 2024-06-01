@@ -9,8 +9,9 @@ const Landing = () => {
         <div className='grid grid-cols-1 gap-4 md:grid-cols-2 mx-20'>
           <img className='border-4 border-black' src='https://res.cloudinary.com/dcugqfvvg/image/upload/v1713647295/standardboard.1d6f9426_asqzum.png' alt='chessboard'/>
           <div className='flex flex-col items-center justify-center gap-10'>
-            <div className='text-[90px] text-white'>Play chess online on the #3 Site!</div>
+            <div className='text-[90px] text-white'>Play chess online on the #1 Site!</div>
             <Button onClick={()=> navigate('/game')} content='Play Online' />
+            <Button onClick={()=> navigate('/login')} content='Login' />
           </div>
         </div>
     </div>

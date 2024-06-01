@@ -20,6 +20,6 @@
     "prisma-multischema": "^1.1.4"
   },
   "exports": {
-    "./client": "./index.ts"
+    "./client": "./src/index.ts"
   }
 }

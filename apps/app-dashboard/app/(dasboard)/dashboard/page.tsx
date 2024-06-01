@@ -44,10 +44,18 @@ async function page() {
             "description": "A WebRTC server to share video stream",
             "link": process.env.NEXT_PUBLIC_WEBRTCAPP_URL || "https://webrtc.practise.bsamaritan.com",
             "image": "https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/webrtc.gif"
+        },
+        ,
+        {
+            "title": "Chess App",
+            "description": "A MultiplayerChess server to play chess with friends",
+            "link": process.env.NEXT_PUBLIC_CHESSAPP_URL || "https://chessapp.practise.bsamaritan.com",
+            "image": "https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/bn.png"
         }
     ]
     return <div className="m-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-max">
        {APPS.map((app) => (
+        // @ts-ignore
                <AppCard key={app.title} title={app.title} description={app.description} link={app.link} image={app.image}/>
        ))}
     </div>

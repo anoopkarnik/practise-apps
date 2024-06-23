@@ -14,6 +14,7 @@
   },
   "exports": {
     "./balance": "./src/hooks/useBalance.ts",
-    "./user": "./src/hooks/useUser.ts"
+    "./user": "./src/hooks/useUser.ts",
+    "./documents": "./src/documents.ts"
   }
 }

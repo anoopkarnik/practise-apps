@@ -45,12 +45,17 @@ async function page() {
             "link": process.env.NEXT_PUBLIC_WEBRTCAPP_URL || "https://webrtc.practise.bsamaritan.com",
             "image": "https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/webrtc.gif"
         },
-        ,
         {
             "title": "Chess App",
             "description": "A MultiplayerChess server to play chess with friends",
             "link": process.env.NEXT_PUBLIC_CHESSAPP_URL || "https://chessapp.practise.bsamaritan.com",
             "image": "https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/bn.png"
+        },
+        {
+            "title": "Service Status App",
+            "description": "A Service Status App made with Betterstack ",
+            "link": process.env.NEXT_PUBLIC_CHESSAPP_URL || "https://status.bsamaritan.com",
+            "image": "https://raw.githubusercontent.com/anoopkarnik/turborepo-boilerplate-code/main/apps/app-dashboard/public/status.gif"
         }
     ]
     return <div className="m-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-max">

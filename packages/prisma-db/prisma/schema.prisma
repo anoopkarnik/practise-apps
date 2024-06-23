@@ -28,6 +28,7 @@ model Account {
   id_token                 String? @db.Text
   session_state            String?
 
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
@@ -54,6 +55,28 @@ model User {
   sessions          Session[]
   OnRampTransaction OnRampTransaction[]
   Balance           Balance[]
+  documents        Documents[]
+}
+
+model Documents {
+  id        String    @id @default(cuid())
+  title     String
+  isArchived Boolean @default(false)
+  userId    String
+  parentId String?
+  parentDocument Documents? @relation("ChildDocuments", fields: [parentId], references: [id])
+  children Documents[] @relation("ChildDocuments")
+  content String?
+  coverImage String?
+  icon String?
+  isPublished Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([userId, parentId])
+
 }
 
 model VerificationToken {
@@ -160,7 +183,7 @@ enum TimeControl {
   RAPID
   BLITZ
   BULLET
-}
+} 
 
 enum AuthProvider {
   EMAIL

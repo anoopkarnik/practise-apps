@@ -2,8 +2,6 @@ import { NextResponse } from "next/server"
 import { getServerSession } from "next-auth"
 import { getNextAuthConfig } from "@repo/next-auth/auth"
 
-
-
 export const GET = async () => {
 
     const NEXT_AUTH_CONFIG = getNextAuthConfig({

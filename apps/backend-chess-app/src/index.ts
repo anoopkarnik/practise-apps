@@ -22,7 +22,7 @@ app.use(passport.initialize());
 app.use(passport.authenticate('session'));
 const allowedHosts = process.env.ALLOWED_HOSTS ? process.env.ALLOWED_HOSTS.split(','): [];
 
-app.use(cors({origin: allowedHosts,methods: 'GET,POST,PUT,DELETEE', credentials: true}));
+app.use(cors({origin: allowedHosts,methods: 'GET,POST,PUT,DELETE', credentials: true}));
 
 app.use('/auth',authRoute);
 

@@ -7,6 +7,9 @@ import Signup from './pages/Signup.jsx';
 import Home from './pages/Home/Home.jsx';
 import React from 'react';
 
+const url = import.meta.env.VITE_APP_DASHBOARD_URL;
+
+
 function App() {
   const {currentUser} = useContext(AuthContext) || {};
 
@@ -19,7 +22,7 @@ function App() {
           <Route path='/signup' element={currentUser  ? <Navigate to='/' /> : <Signup/>} />
         </Routes>
       </div>
-      <a href="https://app-dashboard.bsamaritan.com" rel="noopener noreferrer">
+      <a href={url} rel="noopener noreferrer">
         <div className='absolute rounded-full p-6 m-4 bottom-0 left-0 bg-white hover:bg-violet-400 hover:text-white'>
           <HomeIcon/>
         </div>

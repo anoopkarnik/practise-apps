@@ -9,7 +9,7 @@
     "./button": "./src/button.tsx",
     "./card": "./src/card.tsx",
     "./code": "./src/code.tsx",
-    "./globals.css": "./globals.css",
+    "./globals.css": "./src/globals.css",
     "./utils": "./lib/utils.ts",
     "./notion/*": "./src/notion/*.tsx",
     "./postcss.config": "./postcss.config.js",

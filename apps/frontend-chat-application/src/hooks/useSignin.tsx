@@ -11,8 +11,6 @@ const useSignin = () => {
     const {setCurrentUser} = useContext(AuthContext) || {};
     
     const signin =  async (username:any, password:any) =>{
-        console.log(username,password)
-        console.log(url)
         setLoading(true)
         try{
             const response = await axios.request({
@@ -23,8 +21,6 @@ const useSignin = () => {
                     'Content-Type': 'application/json'
                 }
             })
-            console.log("what")
-            console.log(response)
             const user = response.data
             setCurrentUser(user)
             localStorage.setItem('currentUser', JSON.stringify(user))

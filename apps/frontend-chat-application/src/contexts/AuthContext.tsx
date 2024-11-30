@@ -9,7 +9,7 @@ export const AuthContext = createContext<AuthContextProps | null> (null);
 
 
 export const AuthContextProvider = ({children}:any) => {
-    const [currentUser, setCurrentUser] = useState(null);
+    const [currentUser, setCurrentUser] = useState(localStorage.getItem('currentUser') || null);
 
     return (
         <AuthContext.Provider value={{currentUser, setCurrentUser}}>

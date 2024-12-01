@@ -1,5 +1,5 @@
 {
-  "name": "turborepo-boilerplate-code",
+  "name": "practise-apps",
   "private": true,
   "scripts": {
     "build": "turbo build",

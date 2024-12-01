@@ -1,5 +1,5 @@
 import { cn } from '@repo/ui/utils';
-import { ChevronDown, ChevronRight, CirclePlus, Icon, LucideIcon, MoreHorizontal, MoreVertical, Trash } from 'lucide-react';
+import { ChevronDown, ChevronRight, CirclePlus, File, Icon, LucideIcon, MoreHorizontal, MoreVertical, Trash } from 'lucide-react';
 import React from 'react'
 import classNames from 'classnames';
 import { createPageAction } from '../_actions/create-page';
@@ -65,7 +65,7 @@ const Item = ({id,documentIcon,active,expanded,isSearch,level=0,onExpand,label,o
           />
           </div>
           }
-        {documentIcon ? <div>documentIcon</div>:<Icon className='w-4 h-4' />}
+        {documentIcon ? <div>documentIcon</div>:<File className='w-4 h-4' />}
           <p className='ml-2'>{label}</p>
       </div>
       <div className='flex items-center justify-end'>

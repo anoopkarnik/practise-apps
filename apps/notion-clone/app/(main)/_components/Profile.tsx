@@ -24,7 +24,7 @@ const Profile = () => {
                 <div className='w-full flex items-center justify-between hover:bg-white/10'>
                     <div className='flex items-center ml-2'>
                         <Avatar className='w-4 h-4'>
-                            <AvatarImage src={session?.data?.user?.image} alt={session?.data?.user?.name} />
+                            <AvatarImage src={session?.data?.user?.image || ''} alt={session?.data?.user?.name || ''} />
                             <AvatarFallback>U</AvatarFallback>
                         </Avatar>
                         <p className='ml-2 line-clamp-1'>{session?.data?.user?.name}' Notion</p>
@@ -37,7 +37,7 @@ const Profile = () => {
                 <DropdownMenuLabel>
                     <div className='flex items-center ml-2'>
                         <Avatar className='w-10 h-10'>
-                            <AvatarImage src={session?.data?.user?.image} alt={session?.data?.user?.name} />
+                            <AvatarImage src={session?.data?.user?.image || ''} alt={session?.data?.user?.name || ''} />
                             <AvatarFallback>U</AvatarFallback>
                         </Avatar>
                         <p className='ml-2 line-clamp-1'>{session?.data?.user?.name}</p>

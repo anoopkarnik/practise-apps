@@ -15,7 +15,7 @@ const TrashSearchItem = ({id,title}:TrashSearchItemProps) => {
     const restorePage = async (e:React.MouseEvent) =>{
         e.preventDefault();
         e.stopPropagation();
-        const response = await restorePageAction({documentId:id})
+        const response:any = await restorePageAction({documentId:id})
         if  (response.success){
             toast.message(response.success)
         }
